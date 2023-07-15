@@ -115,3 +115,99 @@ console.log(marks1.getmarks())
 marks1.displayTotal()
 marks1.displayResult()
 marks1.displayGrade()
+
+// ---------------------Question 02---------------------
+class shape{
+    constructor(){
+        this.volume = 0
+        this.sArea = 0
+    }
+}
+class cube extends shape{
+    constructor(x){
+        super()
+        this.length = x
+        this.calArea()
+        this.calVolume()
+    }
+    calArea(){
+        this.sArea = Math.pow(this.length,2)*6
+    }
+    calVolume(){
+        this.volume = Math.pow(this.length,3)
+    }
+}
+const cube01 = new cube(10)
+console.log(cube01)
+
+class Cuboid extends shape{
+    constructor(x,y,z){
+        super()
+        this.length = x
+        this.width = y
+        this.height = z
+        this.calArea()
+        this.calVolume()
+    }
+    calArea(){
+        this.sArea = (2*this.length*this.width)+(2*this.length*this.height)+(2*this.height*this.width)
+    }
+    calVolume(){
+        this.volume = this.length*this.width*this.height
+    }
+}
+const cuboid01 = new Cuboid(10,20,30)
+console.log(cuboid01)
+
+class cylinder extends shape{
+    constructor(x,r){
+        super()
+        this.height = x
+        this.radius = r
+        this.calArea()
+        this.calVolume()
+    }
+    calArea(){
+        this.sArea = (2*Math.PI*Math.pow(this.radius,2))+(2*Math.PI*this.radius*this.height)
+    }
+    calVolume(){
+        this.volume = Math.PI*Math.pow(this.radius,2)*this.height
+    }
+}
+const cylinder01 = new cylinder(10,7)
+console.log(cylinder01)
+
+class sphere extends shape{
+    constructor(r){
+        super()
+        this.radius = r
+        this.calArea()
+        this.calVolume()
+    }
+    calArea(){
+        this.sArea = 4*Math.PI*Math.pow(this.radius,2)
+    }
+    calVolume(){
+        this.volume = 4*Math.PI*Math.pow(this.radius,3)/3
+    }
+}
+const sphere01 = new sphere(10)
+console.log(sphere01)
+
+class cone extends shape{
+    constructor(x,r){
+        super()
+        this.height = x
+        this.radius = r
+        this.calArea()
+        this.calVolume()
+    }
+    calArea(){
+        this.sArea = Math.PI*this.radius*(this.radius+Math.sqrt(Math.pow(this.radius,2)+Math.pow(this.height,2)))
+    }
+    calVolume(){
+        this.volume = Math.PI*Math.pow(this.radius,2)*this.height/3
+    }
+}
+const cone01 = new cone(10,7)
+console.log(cone01)
