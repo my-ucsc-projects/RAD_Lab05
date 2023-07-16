@@ -211,3 +211,96 @@ class cone extends shape{
 }
 const cone01 = new cone(10,7)
 console.log(cone01)
+
+// ---------------------Question 03---------------------
+console.log("\n\n\n-----Question 02\n")
+class Book{
+    constructor(name, price, author, publisher){
+        this.bookName=name
+        this.bookPrice = price
+        this.bookAuthor = author
+        this.bookPublisher = publisher
+        this.discountedPrice = price
+    }
+}
+
+class Novel extends Book{
+    constructor(name, price, author, publisher){
+        super(name, price, author, publisher)
+        this.discountPresentage = 15
+        this.updateDiscountPrice(this.discountPresentage)
+    }
+
+    updateDiscountPrice(discount){
+        this.discountedPrice = this.bookPrice - (this.bookPrice*discount/100)
+    }
+    displayDetais(){
+        console.log("Name:",this.bookName)
+        console.log("Price:",this.discountedPrice)
+        console.log("Author:",this.bookAuthor)
+        console.log("Publisher:",this.bookPublisher)
+    }
+}
+class ShortStories extends Book{
+    constructor(name, price, author, publisher){
+        super(name, price, author, publisher)
+        this.discountPresentage = 15
+        this.updateDiscountPrice(this.discountPresentage)
+    }
+
+    updateDiscountPrice(discount){
+        this.discountedPrice = this.bookPrice - (this.bookPrice*discount/100)
+    }
+    displayDetais(){
+        console.log("Name:",this.bookName)
+        console.log("Price:",this.discountedPrice)
+        console.log("Author:",this.bookAuthor)
+        console.log("Publisher:",this.bookPublisher)
+    }
+}
+class Biographies extends Book{
+    constructor(name, price, author, publisher){
+        super(name, price, author, publisher)
+        this.discountPresentage = 10
+        this.updateDiscountPrice(this.discountPresentage)
+    }
+
+    updateDiscountPrice(discount){
+        this.discountedPrice = this.bookPrice - (this.bookPrice*discount/100)
+    }
+    displayDetais(){
+        console.log("Name:",this.bookName)
+        console.log("Price:",this.discountedPrice)
+        console.log("Author:",this.bookAuthor)
+        console.log("Publisher:",this.bookPublisher)
+    }
+}
+class Educational extends Book{
+    constructor(name, price, author, publisher){
+        super(name, price, author, publisher)
+        this.discountPresentage = 20
+        this.updateDiscountPrice(this.discountPresentage)
+    }
+
+    updateDiscountPrice(discount){
+        this.discountedPrice = this.bookPrice - (this.bookPrice*discount/100)
+    }
+    displayDetais(){
+        console.log("Name:",this.bookName)
+        console.log("Price:",this.discountedPrice)
+        console.log("Author:",this.bookAuthor)
+        console.log("Publisher:",this.bookPublisher)
+    }
+}
+
+const novel01 = new Novel("Madol Doouwa",400.00,"Martin Wickramasinghe","abc")
+novel01.displayDetais()
+console.log("---------------------\n")
+const short01 = new ShortStories("Janakatha",250,"Mahinda Kumara Dalupotha","bcd")
+short01.displayDetais()
+console.log("---------------------\n")
+const biograpical01 = new Biographies("Senadipathi Nandamithra",300,"Prof. Bandusena Gunasekara","asd")
+biograpical01.displayDetais()
+console.log("---------------------\n")
+const edu01 = new Educational("THE OFFICIAL CAMBRIDGE GUIDE TO IELTS", 2600,"Paulin Cullen","ghk")
+edu01.displayDetais()
