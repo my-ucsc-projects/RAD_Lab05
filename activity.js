@@ -213,7 +213,7 @@ const cone01 = new cone(10,7)
 console.log(cone01)
 
 // ---------------------Question 03---------------------
-console.log("\n\n\n-----Question 02\n")
+console.log("\n\n\n-----Question 03\n")
 class Book{
     constructor(name, price, author, publisher){
         this.bookName=name
@@ -304,3 +304,109 @@ biograpical01.displayDetais()
 console.log("---------------------\n")
 const edu01 = new Educational("THE OFFICIAL CAMBRIDGE GUIDE TO IELTS", 2600,"Paulin Cullen","ghk")
 edu01.displayDetais()
+
+// ---------------------Question 04---------------------
+console.log("\n\n\n-----Question 04\n")
+class game{
+    constructor(name,level,theme, avatar, status){
+        this.playerName = name
+        this.selectedLevel = level
+        this.playerResult = "Not finished"
+        this.gameTheme = theme
+        this.playerAvatar = avatar;
+        this.status = status;
+    }
+
+    setGame(name,result,level,theme, avatar, status){
+        this.playerName = name
+        this.selectedLevel = level
+        this.playerResult = result
+        this.gameTheme = theme
+        this.playerAvatar = avatar;
+        this.status = status;
+    }
+    getGame(){
+        return this
+    }
+
+}
+
+class carGame extends game{
+    constructor(score,name,level,theme, avatar, status){
+        super(name,level,theme, avatar, status)
+        this.gameScore = score
+        this.win()
+    }
+    setCarGame(score,name,level,theme, avatar, status,result){
+        this.setGame(name,result,level,theme, avatar, status)
+        this.gameScore = score
+        this.win()
+    }
+    win(){
+        if(this.gameScore==100 && this.status=="finished"){
+            console.log("Winner")
+        }
+    }
+    getCarGame(){
+        return this
+    }
+}
+
+class puzzleGame extends game{
+    constructor(time,stime,name,level,theme, avatar, status){
+        super(name,level,theme, avatar, status)
+        this.gameTime = time
+        this.spendTime = stime
+        this.win()
+    }
+    setPuzzleGame(time,stime,level,theme, avatar, status,result){
+        this.setGame(name,result,level,theme, avatar, status)
+        this.gameTime = time
+        this.spendTime = stime
+        this.win()
+    }
+    win(){
+        if(this.gameTime>=this.spendTime && this.status=="finished"){
+            console.log("Winner")
+        }
+        else{
+            console.log("Game over")
+        }
+    }
+    getPuzzleGame(){
+        return this
+    }
+}
+
+class shootingGame extends game{
+    constructor(completeLevel,mission,name,level,theme, avatar, status){
+        super(name,level,theme, avatar, status)
+        this.gameCompletePrecentage = completeLevel
+        this.mission = mission
+        this.win()
+    }
+    setShootingGame(completeLevel,mission,level,theme, avatar, status,result){
+        this.setGame(name,result,level,theme, avatar, status)
+        this.gameCompletePrecentage = completeLevel
+        this.mission = mission
+        this.win()
+    }
+    win(){
+        if(this.completeLevel==100 && this.status=="finished"){
+            console.log("Winner")
+        }
+        else{
+            console.log("Game over")
+        }
+    }
+    getShootingGame(){
+        return this
+    }
+}
+
+const game01 = new carGame(70,"Ravindu","beginner","theme01","avatar01","finished")
+console.log(game01.getCarGame())
+const game02 = new puzzleGame(100,70,"kavindu","beginner","theme02","avatar04","finished")
+console.log(game01.getCarGame())
+const game03 = new shootingGame(70,"mission01","Ravindu","beginner","theme01","avatar01","finished")
+console.log(game01.getCarGame())
